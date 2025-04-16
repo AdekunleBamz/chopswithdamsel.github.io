@@ -360,8 +360,11 @@ nav {
 .contact-section h2 {
     text-align: center;
     margin-bottom: 3rem;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 /* Order Info Styles */
@@ -374,12 +377,16 @@ nav {
     background-color: white;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 .order-info h3 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 2rem;
     color: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 /* Order Button Styles */
@@ -408,6 +415,8 @@ nav {
     font-weight: 600;
     transition: all 0.3s ease;
     min-width: 220px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
 }
 
 .whatsapp-button {
@@ -438,23 +447,32 @@ nav {
     margin-top: 2rem;
     padding-top: 2rem;
     border-top: 1px solid #eee;
+    text-align: center;
 }
 
 .delivery-info h4 {
     color: var(--secondary-color);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .delivery-info p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
 }
 
 .delivery-note {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #666;
     font-style: italic;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Footer */
