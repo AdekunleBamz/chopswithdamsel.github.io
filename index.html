@@ -3,70 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chops with Damsel</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .menu-section {
-            margin-bottom: 40px;
-        }
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            text-decoration: none;
-            transition: transform 0.2s;
-        }
-        .btn:hover {
-            transform: scale(1.05);
-        }
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
-        }
-        .call-btn {
-            background-color: #007bff;
-            color: white;
-        }
-    </style>
+    <title>Damsel Food Enterprises</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Chops with Damsel</h1>
-        <div class="menu-section">
-            <h2>About Us</h2>
-            <p>We serve delicious, home-cooked meals that bring comfort and satisfaction to your table. Our menu features a variety of traditional and modern dishes prepared with love and care.</p>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="images/damsel-logo.png" alt="Damsel Food Logo" class="logo-image">
+                <div class="typing-container">
+                    <span class="typing-text"></span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Welcome to <span>Damsel Food Enterprises</span></h1>
+                <p>Discover the finest Nigerian snacks and small chops</p>
+                <a href="#menu" class="cta-button">View Our Menu</a>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-section">
+            <div class="container">
+                <h2>Our Menu</h2>
+                <div class="menu-grid">
+                    <!-- Small Chops Section -->
+                    <div class="menu-item">
+                        <div class="menu-image">
+                            <img src="images/small-chops-family.jpg" alt="Small Chops Family Combo">
+                        </div>
+                        <div class="menu-content">
+                            <h3>Small Chops Family Combo</h3>
+                            <p>Perfect for events and large gatherings. Includes a generous assortment of puff puff, samosa, spring rolls, and more.</p>
+                            <p class="serving-info">Serves 15-20 people</p>
+                            <div class="menu-price">₦20,000</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-image">
+                            <img src="images/small-chops-office.jpg" alt="Small Chops Office Pack">
+                        </div>
+                        <div class="menu-content">
+                            <h3>Small Chops Office Pack</h3>
+                            <p>Ideal for office meetings and medium gatherings. A balanced mix of our delicious small chops.</p>
+                            <p class="serving-info">Serves 8-10 people</p>
+                            <div class="menu-price">₦10,000</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-image">
+                            <img src="images/small-chops-small.jpg" alt="Small Chops Personal Pack">
+                        </div>
+                        <div class="menu-content">
+                            <h3>Small Chops Personal Pack</h3>
+                            <p>Perfect for individuals or small groups. A delightful sample of our signature small chops.</p>
+                            <p class="serving-info">Serves 2-3 people</p>
+                            <div class="menu-price">₦6,000</div>
+                        </div>
+                    </div>
+
+                    <!-- Chin Chin Section -->
+                    <div class="menu-item">
+                        <div class="menu-image">
+                            <img src="images/chin-chin-family.jpg" alt="Chin Chin Family Pack">
+                        </div>
+                        <div class="menu-content">
+                            <h3>Chin Chin Family Pack</h3>
+                            <p>Premium crunchy chin chin in a large family size. Perfect for sharing and storing.</p>
+                            <p class="serving-info">1kg pack</p>
+                            <div class="menu-price">₦6,000</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-image">
+                            <img src="images/chin-chin-office.jpg" alt="Chin Chin Office Pack">
+                        </div>
+                        <div class="menu-content">
+                            <h3>Chin Chin Office Pack</h3>
+                            <p>Medium-sized pack perfect for office snacking and small gatherings.</p>
+                            <p class="serving-info">500g pack</p>
+                            <div class="menu-price">₦3,500</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-image">
+                            <img src="images/chin-chin-small.jpg" alt="Chin Chin Small Pack">
+                        </div>
+                        <div class="menu-content">
+                            <h3>Chin Chin Small Pack</h3>
+                            <p>Our delicious chin chin in a convenient personal size pack.</p>
+                            <p class="serving-info">250g pack</p>
+                            <div class="menu-price">₦1,000</div>
+                        </div>
+                    </div>
+
+                    <!-- Plantain Chips Section -->
+                    <div class="menu-item">
+                        <div class="menu-image">
+                            <img src="images/plantain-chips-family.jpg" alt="Plantain Chips Family Pack">
+                        </div>
+                        <div class="menu-content">
+                            <h3>Plantain Chips Family Pack</h3>
+                            <p>Large pack of our crispy, perfectly seasoned plantain chips.</p>
+                            <p class="serving-info">1kg pack</p>
+                            <div class="menu-price">₦6,000</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-image">
+                            <img src="images/plantain-chips-office.jpg" alt="Plantain Chips Office Pack">
+                        </div>
+                        <div class="menu-content">
+                            <h3>Plantain Chips Office Pack</h3>
+                            <p>Medium-sized pack perfect for sharing at work or small gatherings.</p>
+                            <p class="serving-info">500g pack</p>
+                            <div class="menu-price">₦3,500</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-image">
+                            <img src="images/plantain-chips-small.jpg" alt="Plantain Chips Small Pack">
+                        </div>
+                        <div class="menu-content">
+                            <h3>Plantain Chips Small Pack</h3>
+                            <p>Our signature plantain chips in a convenient personal size.</p>
+                            <p class="serving-info">250g pack</p>
+                            <div class="menu-price">₦1,000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>At Damsel Food Enterprises, we specialize in creating delicious Nigerian snacks and small chops. Our commitment to quality ingredients and traditional recipes makes us your perfect choice for any occasion.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contact & Orders</h2>
+                <div class="order-info">
+                    <h3>Place Your Order</h3>
+                    <div class="order-buttons">
+                        <a href="https://wa.me/2349046029078" class="whatsapp-button" target="_blank">
+                            <img src="images/whatsaap-icon.png" alt="WhatsApp" class="button-icon">
+                            Order on WhatsApp
+                        </a>
+                        <a href="tel:+2349046029078" class="call-button">
+                            <img src="images/phone-icon.png" alt="Phone" class="button-icon">
+                            Call to Order
+                        </a>
+                    </div>
+                    <div class="delivery-info">
+                        <h4>Nationwide Delivery Available</h4>
+                        <p>We deliver to all states in Nigeria</p>
+                        <p class="delivery-note">* Delivery charges vary by location</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Damsel Food Enterprises. All rights reserved.</p>
         </div>
-        <div class="contact-buttons">
-            <a href="https://wa.me/+2347025025025" class="btn whatsapp-btn">Order on WhatsApp</a>
-            <a href="tel:+2347025025025" class="btn call-btn">Call to Order</a>
-        </div>
-    </div>
+    </footer>
+    <script>
+        const texts = [
+            "Damsel Food",
+            "Fast Delivery",
+            "We Supply Small Chops",
+            "Crunchy Chin-Chin",
+            "Crispy Plantain Chips",
+            "Quality Service",
+            "Nationwide Delivery",
+            "Best Small Chops"
+        ];
+        
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingDelay = 100;
+        const erasingDelay = 50;
+        const newTextDelay = 2000;
+        
+        const typingElement = document.querySelector('.typing-text');
+        
+        function type() {
+            const currentText = texts[textIndex];
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+        
+            if (!isDeleting && charIndex === currentText.length) {
+                setTimeout(() => {
+                    isDeleting = true;
+                }, newTextDelay);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+            }
+        
+            setTimeout(type, isDeleting ? erasingDelay : typingDelay);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(type, newTextDelay);
+        });
+    </script>
 </body>
 </html> 
