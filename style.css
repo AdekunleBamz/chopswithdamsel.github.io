@@ -164,13 +164,45 @@ nav {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     position: relative;
-    animation: fadeInUp 1s ease;
+    animation: float 3s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .hero h1 span {
     display: block;
     color: var(--accent-color);
     animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(255, 191, 105, 0.5),
+                     0 0 40px rgba(255, 191, 105, 0.3),
+                     0 0 60px rgba(255, 191, 105, 0.2);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(255, 191, 105, 0.8),
+                     0 0 60px rgba(255, 191, 105, 0.5),
+                     0 0 90px rgba(255, 191, 105, 0.3);
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .hero p {
@@ -491,6 +523,11 @@ footer {
     
     .hero h1 {
         font-size: 2.5rem;
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    .hero h1 span {
+        font-size: 2.2rem;
     }
     
     .order-buttons {
@@ -654,36 +691,12 @@ footer {
     }
 }
 
-@keyframes shine {
-    100% {
-        left: 150%;
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
 @keyframes rotate {
     from {
         transform: rotate(0deg);
     }
     to {
         transform: rotate(360deg);
-    }
-}
-
-@keyframes gradientShift {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
     }
 }
 
