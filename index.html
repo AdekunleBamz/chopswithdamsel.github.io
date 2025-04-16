@@ -174,7 +174,7 @@
                     <h3>Place Your Order</h3>
                     <div class="order-buttons">
                         <a href="https://wa.me/2349046029078" class="whatsapp-button" target="_blank">
-                            <img src="images/whatsapp-icon.png" alt="WhatsApp" class="button-icon">
+                            <img src="images/whatsapp-icon.svg" alt="WhatsApp" class="button-icon">
                             Order on WhatsApp
                         </a>
                         <a href="tel:+2349046029078" class="call-button">
@@ -242,6 +242,25 @@
         
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(type, newTextDelay);
+
+            // Add smooth scrolling for all navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = 100;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>

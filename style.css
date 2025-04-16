@@ -710,4 +710,8 @@ footer {
     100% {
         background-position: 0% 50%;
     }
+}
+
+html {
+    scroll-behavior: smooth;
 } 
