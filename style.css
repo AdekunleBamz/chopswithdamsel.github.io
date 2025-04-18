@@ -714,4 +714,59 @@ footer {
 
 html {
     scroll-behavior: smooth;
+}
+
+/* Video Section Styles */
+.video-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.single-video-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.single-video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-caption {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-top: 2px solid var(--secondary-color);
+}
+
+.video-caption a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.video-caption a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .single-video-container {
+        margin: 0 20px;
+        max-width: calc(100% - 40px);
+    }
+    
+    .video-caption {
+        font-size: 1rem;
+        padding: 15px;
+    }
 } 

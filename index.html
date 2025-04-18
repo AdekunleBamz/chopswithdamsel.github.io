@@ -154,6 +154,18 @@
             </div>
         </section>
 
+        <section id="videos" class="video-section">
+            <div class="container">
+                <div class="single-video-container">
+                    <video width="600" controls autoplay muted playsinline loop poster="images/video-poster.jpg">
+                        <source src="videos/chin-chin-production.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video-caption">For mass production, please contact us on <a href="tel:+2349046029078">+2349046029078</a></p>
+                </div>
+            </div>
+        </section>
+
         <section id="about" class="about-section">
             <div class="container">
                 <h2>About Us</h2>
@@ -239,9 +251,59 @@
         
             setTimeout(type, isDeleting ? erasingDelay : typingDelay);
         }
+
+        // Video randomizer function
+        const videos = [
+            'videos/chin-chin-production.mp4',
+            'videos/meat-pie-production.mp4',
+            'videos/plantain-chips-production.mp4'
+        ];
+
+        function playRandomVideo() {
+            const randomIndex = Math.floor(Math.random() * videos.length);
+            const videoElement = document.getElementById('randomVideo');
+            const selectedVideo = videos[randomIndex];
+            
+            console.log('Attempting to play video:', selectedVideo);
+            
+            // Reset video element
+            videoElement.pause();
+            videoElement.currentTime = 0;
+            
+            // Set new source
+            videoElement.src = selectedVideo;
+            
+            // Add event listeners for debugging
+            videoElement.onerror = function(e) {
+                console.error('Error loading video:', selectedVideo, e);
+                // Try next video if current one fails
+                setTimeout(playRandomVideo, 1000);
+            };
+            
+            videoElement.onloadeddata = function() {
+                console.log('Video loaded successfully:', selectedVideo);
+                videoElement.play().catch(error => {
+                    console.error('Error playing video:', error);
+                });
+            };
+            
+            videoElement.load();
+        }
         
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(type, newTextDelay);
+            
+            // Initial video load
+            playRandomVideo();
+            
+            // Play next random video when current one ends
+            document.getElementById('randomVideo').addEventListener('ended', playRandomVideo);
+            
+            // Add error handling for video loading
+            document.getElementById('randomVideo').addEventListener('error', function(e) {
+                console.error('Video error:', e);
+                setTimeout(playRandomVideo, 1000);
+            });
 
             // Add smooth scrolling for all navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
