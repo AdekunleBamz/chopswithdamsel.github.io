@@ -154,14 +154,34 @@
             </div>
         </section>
 
-        <section id="videos" class="video-section">
+        <section id="gallery" class="gallery-section">
             <div class="container">
-                <div class="single-video-container">
-                    <video width="600" controls autoplay muted playsinline loop poster="images/video-poster.jpg">
-                        <source src="videos/chin-chin-production.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p class="video-caption">For mass production, please contact us on <a href="tel:+2349046029078">+2349046029078</a></p>
+                <h2>Our Delicious Creations</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/meat-pie-1.jpg" alt="Meat Pie">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/doughnut-1.jpg" alt="Doughnut">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/meat-pie-2.jpg" alt="Meat Pie">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/doughnut-2.jpg" alt="Doughnut">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/meat-pie-3.jpg" alt="Meat Pie">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/doughnut-3.jpg" alt="Doughnut">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/meat-pie-4.jpg" alt="Meat Pie">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/doughnut-4.jpg" alt="Doughnut">
+                    </div>
                 </div>
             </div>
         </section>
@@ -252,59 +272,29 @@
             setTimeout(type, isDeleting ? erasingDelay : typingDelay);
         }
 
-        // Video randomizer function
         const videos = [
             'videos/chin-chin-production.mp4',
             'videos/meat-pie-production.mp4',
             'videos/plantain-chips-production.mp4'
         ];
+        let currentIndex = 0;
 
-        function playRandomVideo() {
-            const randomIndex = Math.floor(Math.random() * videos.length);
-            const videoElement = document.getElementById('randomVideo');
-            const selectedVideo = videos[randomIndex];
+        function playNextVideo() {
+            const video = document.getElementById('mainVideo');
+            video.src = videos[currentIndex];
+            video.load();
+            video.play();
             
-            console.log('Attempting to play video:', selectedVideo);
-            
-            // Reset video element
-            videoElement.pause();
-            videoElement.currentTime = 0;
-            
-            // Set new source
-            videoElement.src = selectedVideo;
-            
-            // Add event listeners for debugging
-            videoElement.onerror = function(e) {
-                console.error('Error loading video:', selectedVideo, e);
-                // Try next video if current one fails
-                setTimeout(playRandomVideo, 1000);
-            };
-            
-            videoElement.onloadeddata = function() {
-                console.log('Video loaded successfully:', selectedVideo);
-                videoElement.play().catch(error => {
-                    console.error('Error playing video:', error);
-                });
-            };
-            
-            videoElement.load();
+            currentIndex = (currentIndex + 1) % videos.length;
         }
-        
+
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(type, newTextDelay);
             
-            // Initial video load
-            playRandomVideo();
+            const video = document.getElementById('mainVideo');
+            video.addEventListener('ended', playNextVideo);
+            playNextVideo();
             
-            // Play next random video when current one ends
-            document.getElementById('randomVideo').addEventListener('ended', playRandomVideo);
-            
-            // Add error handling for video loading
-            document.getElementById('randomVideo').addEventListener('error', function(e) {
-                console.error('Video error:', e);
-                setTimeout(playRandomVideo, 1000);
-            });
-
             // Add smooth scrolling for all navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
